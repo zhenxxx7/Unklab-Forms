@@ -1,11 +1,23 @@
 import React from "react";
-// import Home from "./pages/home/home";
+import { BrowserRouter as Router, Routes,Route } from "react-router-dom";
 import Login from "./pages/login/login";
+import Home from "./pages/home/home";
+import CreateForm from "./pages/createForm/createForm";
+import CheckingF from "./pages/checkingForm/checkingForm";
 
-export default function App() {
+function App() {
   return (
-    <div class="">
-      <Login />
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/createForm" element={<CreateForm />} />
+          <Route path="/checkingForm" element={<CheckingF />} />
+        </Routes>
+      </Router>
     </div>
-  )
+  );
 }
+
+export default App;

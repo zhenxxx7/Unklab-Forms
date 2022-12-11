@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+    const navigate = useNavigate();
+
     return (
         <div>
             <div className="text-center md: mt-20 mx-auto:text-justify px-8 text-4xl font-semibold">
@@ -17,11 +20,11 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-                <button className="mt-5 -mb-2 mr-48  bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-4 rounded-md">
+                <button className="mt-5 -mb-2 mr-48  bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-4 rounded-md" onClick={() => navigate ("/checkingForm")}>
                     See Form Responds
                 </button>
 
-                <button className="-mt-20 ml-48 bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-6 rounded-md">
+                <button className="-mt-20 ml-48 bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-6 rounded-md" onClick={() => navigate ("/createForm")}>
                     Create New Form
                 </button>
             </div>
