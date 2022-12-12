@@ -1,12 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './home.css';
+
 
 export default function Home() {
     const navigate = useNavigate();
 
     return (
         <div>
-            <div className="text-center md: mt-20 mx-auto:text-justify px-8 text-4xl font-semibold">
+            <div className="text-center md: mt-20 mx-auto:text-justify px-8 text-4xl font-bold text-primary tx">
                 <h1>WELCOME BACK USER!</h1>
             </div>
             <div>              
@@ -14,18 +16,21 @@ export default function Home() {
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div class="relative">
                         <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm border-2 border-stone-600 rounded-2xl" placeholder="Token" required></input>
-                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-orange-400 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-orange-400 dark:hover:bg-orange-500 dark:focus:ring-orange-600">Search</button>
+                        <button type="submit" class="text-black absolute right-2.5 bottom-2.5 ">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Icon description</span>
+                        </button>
                     </div>
                 </form>
             </div>
 
             <div className="flex flex-col items-center justify-center">
-                <button className="mt-5 -mb-2 mr-48  bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-4 rounded-md" onClick={() => navigate ("/checkingForm")}>
+                <button className="mt-5 -mb-2 mr-48  bg-stone-300 hover:bg-orange-600 text-black font-bold py-8 px-4 rounded-md" onClick={() => navigate ("/checkingForm")}>
                     See Form Responds
                 </button>
 
-                <button className="-mt-20 ml-48 bg-orange-400 hover:bg-orange-600 text-white font-bold py-8 px-6 rounded-md" onClick={() => navigate ("/createForm")}>
-                    Create New Form
+                <button className="-mt-20 ml-48 bg-stone-300 hover:bg-orange-600 text-black font-bold py-8 px-10 rounded-md" onClick={() => navigate ("/createForm")}>
+                    <span className="tx">Create Form</span>
                 </button>
             </div>
 

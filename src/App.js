@@ -4,10 +4,11 @@ import Login from "./pages/login/login";
 import Home from "./pages/home/home";
 import CreateForm from "./pages/createForm/createForm";
 import CheckingF from "./pages/checkingForm/checkingForm";
+import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className="tx">
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
