@@ -8,6 +8,11 @@ export default function CreateForm() {
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     const handleOnClose = () => setShowModal(false);
+    const [cards, setCards] = useState([{cards: ""}]);
+    const addCard = () => {
+        setCards([...cards, {cards: ""}]);
+    };
+    
     return (
         <div className="bg-stone-200">
             <div className="flex flex-col items-center justify-center">
@@ -35,21 +40,39 @@ export default function CreateForm() {
                 <div className="m-3 md:mb-1">
                     <InputCard />
                 </div>
-                <div className="m-3 md:mb-1">
-                    <InputCard />
-                </div>
-                <div className="m-3 md:mb-1">
-                    <InputCard />
+
+                <div className="">
+                    {cards.map((card, index) => {
+                        return (
+                            <div key={index}>
+                                <div className="m-3 md:mb-1">
+                                    <div class="">
+                                        <button id="remove"
+                                            onClick={() => setCards(cards.slice(0, -1))}
+                                            >
+                                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path></svg>
+                                        </button>
+                                    </div>
+                                    <InputCard />
+                                </div>
+                            </div>
+                        );
+                    }
+                    )}
                 </div>
             </div>
+            
 
             <div class="mt-3 flex flex-col items-center justify-center">
                 <div class=" max-w-sm py-10 px-[13%] bg-white border border-gray-200 rounded-2xl shadow-md">
-                    <button>
+                    <button id="add"
+                    onClick={addCard}
+                    >
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     </button>
                 </div>
             </div>
+
             
             <div className="md:flex md:flex-col md:items-center md:justify-center pt-[1vh] pr-[11%]">
                 <button type="button" class=" max-md:hidden text-dark bg-white hover:bg-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white dark:hover:bg-stone-300 " onClick={() => setShowModal(true)}>
