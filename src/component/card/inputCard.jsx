@@ -30,6 +30,7 @@ export default function InputCard(){
         setPreview(fileUploaded);
     };
 
+
     return(
         <div className="">
             <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
@@ -82,18 +83,18 @@ export default function InputCard(){
                     <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
                 </div>
                 <div class="flex items-center mt-6 mb-4">
-                    <input checked id="radio-2" type="radio" value="" name="-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                    <label for="radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
+                    <input checked id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
+                    <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
                 </div>
                 <div class="flex items-center mt-6 mb-4">
-                    <input checked id="radio-2" type="radio" value="" name="-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                    <label for="radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
+                    <input checked id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
+                    <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
                 </div>
                 <div class="">
                     {Option.map((opti, index) => {
                         return(
                             <div key={index} class="flex items-center mt-6 mb-4">
-                                <input id="radio" type="radio" value="" name="-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
+                                <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
                                 <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
                             </div>
                         )
