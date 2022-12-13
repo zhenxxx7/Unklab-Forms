@@ -4,6 +4,7 @@ import Login from "./pages/login/login";
 import Home from "./pages/home/home";
 import CreateForm from "./pages/createForm/createForm";
 import CheckingF from "./pages/checkingForm/checkingForm";
+import FinishPage from "./pages/finish/finish";
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/createForm" element={<CreateForm />} />
           <Route path="/checkingForm" element={<CheckingF />} />
+          <Route path="/finish" element={<FinishPage />} />
         </Routes>
       </Router>
     </div>

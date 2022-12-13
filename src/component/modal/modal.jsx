@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Modal({ visible, onClose}) {
+    const navigate = useNavigate();
     const handleOnClose = () => {
         onClose();
     };
@@ -47,7 +49,9 @@ export default function Modal({ visible, onClose}) {
                         </div>
                     </div>
                     <div class="mr-4 px-2 py-3 flex float-right items-end sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button id="ShareForm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-7 py-2 bg-stone-300 text-base font-medium text-black hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        <button id="ShareForm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-7 py-2 bg-stone-300 text-base font-medium text-black hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        onClick={() => navigate("/finish")}
+                        >
                             Share Form
                         </button>
                     </div>

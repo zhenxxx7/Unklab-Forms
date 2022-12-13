@@ -36,6 +36,8 @@ export default function InputCard(){
                 <input type="text" id="small-input" class="block w-full font-medium text-lg text-black  placeholder:text-black" placeholder="Untitled Question"></input>
                 <hr className="mt-3 h-0 rounded bg-black " />
 
+                
+
                 <span className="text-red-600 hidden">This field needs to be filled</span>
                 {/* <input type="file" class="mt-4 block w-full text-sm text-slate-500
                     file:mr-4 file:py-2 file:px-4
