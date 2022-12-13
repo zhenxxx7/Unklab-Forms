@@ -7,7 +7,20 @@ export default function InputCard(){
     // const img = useRef(null);
     const [Option, setOption] = useState([{Option: ""}]);
     const addOption = () => {
-        setOption([...Option, {Option: ""}]);
+        setOption([...Option, {Option: ""},]);
+    };
+
+    const handleOptionChange = (e, index) => {
+        const {name, value} = e.target;
+        const list = [...Option];
+        list[index][name] = value;
+        setOption(list);
+    };
+
+    const handleRemoveClick = (index) => {
+        const list = [...Option];
+        list.splice(index, 1);
+        setOption(list);
     };
 
     const [image, setImage] = useState([]);
@@ -34,7 +47,9 @@ export default function InputCard(){
     return(
         <div className="">
             <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                <input type="text" id="small-input" class="block w-full font-medium text-lg text-black  placeholder:text-black" placeholder="Untitled Question"></input>
+                <input type="text" id="small-input" class="block w-full font-medium text-lg text-black  placeholder:text-black" placeholder="Untitled Question"
+                value={Option.Option} onChange={e => handleOptionChange({Option: e.target.value})}
+                ></input>
                 <hr className="mt-3 h-0 rounded bg-black " />
 
                 
@@ -47,6 +62,7 @@ export default function InputCard(){
                     file:bg-stone-200 file:text-black
                     hover:file:bg-violet-100
                 "/> */}
+
 
                 <div class="mt-4">
                     {/* <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Add image</label> */}
@@ -78,7 +94,7 @@ export default function InputCard(){
                 )}
 
                 
-                <div class="flex items-center mt-6 mb-4">
+                {/* <div class="flex items-center mt-6 mb-4">
                     <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
                     <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
                 </div>
@@ -89,16 +105,28 @@ export default function InputCard(){
                 <div class="flex items-center mt-6 mb-4">
                     <input checked id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
                     <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
-                </div>
+                </div> */}
                 <div class="">
                     {Option.map((opti, index) => {
                         return(
                             <div key={index} class="flex items-center mt-6 mb-4">
                                 <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                                <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
+                                <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                                <input type="text" id="small-input" class="bg-transparent block w-full p-2 text-black " placeholder="Option 1"></input>
+                                {Option.length !== 1 &&
+                                <button className="float-right "
+                                onClick = {() => handleRemoveClick(index)}
+                                >
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                </button>
+                                }
+                                </label>
                             </div>
                         )
                     })}
+                    <div>
+                        
+                    </div>
                 </div>
                 <div class="flex items center mt-6">
                     <button class="flex w-full px-4 py-2 text-sm font-normal text-stone-400"

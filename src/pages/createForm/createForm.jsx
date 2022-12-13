@@ -12,6 +12,19 @@ export default function CreateForm() {
     const addCard = () => {
         setCards([...cards, {cards: ""}]);
     };
+
+    // const handleOnChange = (e, index) => {
+    //     const {name, value} = e.target;
+    //     const list = [...cards];
+    //     list[index][name] = value;
+    //     setCards(list);
+    // };
+
+    const handleRemoveClick = (index) => {
+        const list = [...cards];
+        list.splice(index, 1);
+        setCards(list);
+    };
     
     return (
         <div className="bg-stone-200">
@@ -47,7 +60,7 @@ export default function CreateForm() {
                             <div key={index}>
                                 <div className="m-3 md:mb-1">
                                         <button id="remove"
-                                            onClick={() => setCards(cards.slice(0, -1))}
+                                        onClick={() => handleRemoveClick(index)}
                                             >
                                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                         </button>
@@ -62,7 +75,7 @@ export default function CreateForm() {
             
 
             <div class="mt-3 flex flex-col items-center justify-center">
-                <div class=" max-w-sm py-10 px-[13%] bg-white border border-gray-200 rounded-2xl shadow-md">
+                <div class=" max-w-sm py-10 px-[13%] max-md:px-[45%] bg-white border border-gray-200 rounded-2xl shadow-md">
                     <button id="add"
                     onClick={addCard}
                     >
