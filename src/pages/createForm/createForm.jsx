@@ -10,23 +10,26 @@ export default function CreateForm() {
     const handleOnClose = () => setShowModal(false);
     return (
         <div className="bg-stone-200">
-            <div className="bg-white rounded-2xl -mt-3 md:max-w-sm md:ml-1/2 2xl:ml-1/3">
-                <div className="md:flex md:flex-col md:items-start md:justify-center">
-                    <button type="button" class="mt-4 ml-2 text-stone-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 dark:focus:ring-orange-400" onClick={() => navigate ("/home")}>
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
-                        <span class="sr-only">Icon description</span>
-                    </button>
-                </div>
-                    
-                <div className="max-md:mt-6 md:flex md:flex-col md:items-start  md:justify-center">
-                    <div className="md: mx-auto:text-justify px-8 text-4xl font-medium">
-                        <input type="text" id="small-input" class="bg-transparent block w-full p-2 text-black placeholder:text-black" placeholder="Untitled Form"></input>
+            <div className="flex flex-col items-center justify-center">
+                <div className="bg-white rounded-2xl -mt-3  ">
+                    <div className="md:flex md:flex-col md:items-start md:justify-center">
+                        <button type="button" class="mt-4 ml-2 text-stone-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 dark:focus:ring-orange-400" onClick={() => navigate ("/home")}>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Icon description</span>
+                        </button>
                     </div>
-                    <div className="md: mx-auto:text-justify px-8 mb-10">
-                        <input type="text" id="small-input" class="bg-transparent block w-full p-2 text-black " placeholder="add a description"></input>
+                        
+                    <div className="max-md:mt-6 md:flex md:flex-col md:items-start  md:justify-center">
+                        <div className="md: mx-auto:text-justify px-8 text-4xl font-medium">
+                            <input type="text" id="small-input" class="bg-transparent block w-full p-2 text-black placeholder:text-black" placeholder="Untitled Form"></input>
+                        </div>
+                        <div className="md: mx-auto:text-justify px-8 mb-10">
+                            <input type="text" id="small-input" class="bg-transparent block w-full p-2 text-black " placeholder="add a description"></input>
+                        </div>
                     </div>
                 </div>
             </div>
+            
 
             <div className="md:flex md:flex-col md:items-center md:justify-center ">
                 <div className="m-3 md:mb-1">
@@ -37,6 +40,14 @@ export default function CreateForm() {
                 </div>
                 <div className="m-3 md:mb-1">
                     <InputCard />
+                </div>
+            </div>
+
+            <div class="mt-3 flex flex-col items-center justify-center">
+                <div class=" max-w-sm py-10 px-[13%] bg-white border border-gray-200 rounded-2xl shadow-md">
+                    <button>
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </button>
                 </div>
             </div>
             

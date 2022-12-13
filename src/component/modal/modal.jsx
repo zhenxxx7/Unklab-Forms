@@ -18,7 +18,9 @@ export default function Modal({ visible, onClose}) {
                 <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="sm:flex sm:items-start">
-                            <button id="closeModal" className="" onClick={onClose}>x</button>
+                            <button id="closeModal" className="flex items-end float-right " onClick={onClose}>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            </button>
 
                             <div class="mt-3 text-left sm:mt-0 sm:ml-4 sm:text-left">
                                 <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
@@ -45,7 +47,7 @@ export default function Modal({ visible, onClose}) {
                         </div>
                     </div>
                     <div class="mr-4 px-2 py-3 flex float-right items-end sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button id="ShareForm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-7 py-2 bg-stone-300 text-base font-medium text-black hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        <button id="ShareForm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-7 py-2 bg-stone-300 text-base font-medium text-black hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 sm:ml-3 sm:w-auto sm:text-sm">
                             Share Form
                         </button>
                     </div>
