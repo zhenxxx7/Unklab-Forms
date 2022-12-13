@@ -16,6 +16,11 @@ module.exports = {
       fontFamily: {
         inte: ['Inter', 'sans-serif'],
       },
+
+      margin: {
+        '1/2': '35.6%',
+        '1/3': '39.8%',
+      }
     },
   },
   container: {
