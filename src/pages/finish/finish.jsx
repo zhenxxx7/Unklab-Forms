@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function FinishPage() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     function getRandomString(length) {
         let randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789' /*'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'*/;
         let result = '';
@@ -27,12 +27,13 @@ export default function FinishPage() {
                 </button>
 
             </div>
-            <button id="homebtn"
+            {/* <button id="homebtn"
                 className=" text-black font-normal font-inte py-2 px-4 "
                 onClick={() => navigate("/home")}
                 >
                 tap here to return to home page
-            </button>
+            </button> */}
+            <a href="/home" className=" text-black font-normal font-inte py-2 px-4 ">tap here to return to home page</a>
         </div>
     </div>
   );
