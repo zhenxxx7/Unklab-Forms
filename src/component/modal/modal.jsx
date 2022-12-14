@@ -1,17 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export default function Modal({ visible, onClose}) {
     const navigate = useNavigate();
-    const handleOnClose = () => {
-        onClose();
-    };
+    // const handleOnClose = () => {
+    //     onClose();
+    // };
+
+    const exp = useRef();
+
+    
 
     if (!visible) return null;
     return (
-        <div onClick={handleOnClose}>
-        <div class="fixed z-10 inset-0 overflow-y-auto">
-            <div class="flex items[...]-end justify-center min-h-screen pt-[35vh] px-4 pb-[65vh] text-center sm:block sm:p-0">
+        <div /*onClick={handleOnClose}*/>
+        <div class="fixed z-10 inset-0 overflow-y-auto max-sm:overflow-hidden max-sm:-mt-[14vh]">
+            <div class=" block items[...]-end justify-center min-h-screen pt-[35vh] px-4 pb-[65vh] text-center sm:block sm:p-0">
                 <div class="fixed inset-0 transition-opacity" aria-hidden="true">
                     <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
@@ -47,6 +52,38 @@ export default function Modal({ visible, onClose}) {
                                 </div>
                             </div>
                         </div>
+                    <div id="expired" className="bg-[#EBEBEB;] p-5 rounded-full">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div id="" className="absolute left-[23%] top-[36.2vh] ">
+                            
+                            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class=" text-black bg-[#D9D9D9]  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button"
+                            onClick={() => {
+                                const dropdown = document.getElementById(exp.current.id);
+                                dropdown.classList.toggle('hidden');
+                                dropdown.classList.toggle('block');
+                            }
+                            }
+                            >One week <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                            
+                            <div ref={exp} id="dropdownRadioBgHover" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow">
+                                <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
+                                <li>
+                                    <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-100">
+                                        <input id="default-radio-4" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 "></input>
+                                        <label for="default-radio-4" class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">One Week</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-100">
+                                        <input checked id="default-radio-5" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 "></input>
+                                        <label for="default-radio-5" class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">24 Hour</label>
+                                    </div>
+                                </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
                     </div>
                     <div class="mr-4 px-2 py-3 flex float-right items-end sm:px-6 sm:flex sm:flex-row-reverse">
                         <button id="ShareForm" type="button" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-7 py-2 bg-stone-300 text-base font-medium text-black hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 sm:ml-3 sm:w-auto sm:text-sm"
