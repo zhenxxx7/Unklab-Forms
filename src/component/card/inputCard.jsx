@@ -106,23 +106,23 @@ export default function InputCard(){
                 </div>
                         )}
 
-                <div id="previewImage" className="mt-4 flex flex-col items-center">
+                <div id="previewImage" className="mt-4 flex flex-col items-center ">
                     {image.map((img, index) => (
                         <img key={index} src = {img} alt="preview" />
                     ))}
+                    {preview && (
+                        <div id="img-remove1" class="absolute flex ">
+                            <button id="img-remove1" class="flex m-l[10%] w-full px-4 py-2 text-sm font-normal text-stone-400"
+                                onClick={() => setPreview(null)}>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            </button>
+                        </div>
+                    )}
+
                 </div>
 
                 {/* if no image then remove button not showing */}
-                {preview && (
-                    <div class="flex items
-                    center mt-6">
-                        <button class="flex w-full px-4 py-2 text-sm font-normal text-stone-400"
-                            onClick={() => setPreview(null)}>
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                        </button>
-                    </div>
-                )}
-
+                
                 
                 {/* <div class="flex items-center mt-6 mb-4">
                     <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
@@ -175,7 +175,7 @@ export default function InputCard(){
                                 )}
 
 
-                                <div id="previewImage" className="mt-4 flex flex-col items-center">
+                                <div id="previewImage2" className="mt-4 flex flex-col items-center">
                                     {image2.map((img, index) => (
                                         <img key={index} src = {img} alt="preview" />
                                     ))}
