@@ -54,38 +54,35 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-            </div>
-            
+                <div className="relative flex flex-col items-center justify-center ">
+                    {/* <div className="m-3 md:mb-1">
+                        <InputCard />
+                    </div> */}
 
-            <div className="md:flex md:flex-col md:items-center md:justify-center ">
-                {/* <div className="m-3 md:mb-1">
-                    <InputCard />
-                </div> */}
-
-                <div className="" id="addremove-card">
-                    {cards.map((card, index) => {
-                        return (
-                            <div key={index}>
-                                <div className="m-3 md:mb-1">
-                                    {cards.length > 1 && 
-                                        <button id="remove" className="relative float-right right-4 top-3"
-                                        onClick={() => handleRemoveClick(index)}
-                                            >
-                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                        </button>
-                                    }
-                                    <InputCard />
+                    <div className="" id="addremove-card">
+                        {cards.map((card, index) => {
+                            return (
+                                <div key={index}>
+                                    <div className="m-3 md:mb-1">
+                                        {cards.length > 2 && 
+                                            <button id="remove" className="relative float-right right-4 top-3"
+                                            onClick={() => handleRemoveClick(index)}
+                                                >
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        }
+                                        <InputCard />
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    }
-                    )}
+                            );
+                        }
+                        )}
+                    </div>
                 </div>
-            </div>
-            
+                
 
             <div class="mt-3 flex flex-col items-center justify-center">
-                <div class=" max-w-sm py-10 px-[13%] max-md:px-[45%] bg-white border border-gray-200 rounded-2xl shadow-md">
+                <div class=" max-w-sm py-10 px-44 bg-white border border-gray-200 rounded-2xl shadow-md">
                     <button id="add"
                     onClick={addCard}
                     >
@@ -93,9 +90,9 @@ export default function CreateForm() {
                     </button>
                 </div>
             </div>
-
             
-            <div className="md:flex md:flex-col md:items-center md:justify-center pt-[1vh] pr-[11%]">
+        </div>
+            <div className="md:flex md:flex-col md:items-center md:justify-center pt-[1vh] ">
                 <button type="button" class=" max-md:hidden text-dark bg-white hover:bg-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-white dark:hover:bg-stone-300 " onClick={() => setShowModal(true)}>
                     Done
                 </button>
@@ -107,7 +104,6 @@ export default function CreateForm() {
             </button>
             
             <Modal onClose={handleOnClose} visible={showModal} />
-            
-        </div>
+            </div>
     );
 }
