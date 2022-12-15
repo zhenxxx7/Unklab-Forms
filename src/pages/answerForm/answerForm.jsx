@@ -1,40 +1,195 @@
-// import React from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// export default function AnswerForm() {
-//     const [form, setForm] = React.useState([]);
+export default function AnswerForm() {
+    const navigate = useNavigate();
+    const [form, setForm] = React.useState([]);
 
-//     React.useEffect(() => {
-//         setForm([
-//             {
-//                 id: 1,
-//                 title: "Form 1",
-//                 token: "1da2ad",
-//                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-//             },
-//             {
-//                 id: 2,
-//                 title: "Form 2",
-//                 token: "1da23d",
-//                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-//             },
+    React.useEffect(() => {
+        setForm([
+            {
+                id: 1,
+                title: "Form 1",
+                token: "1da2ad",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                questions: [
+                    {
+                        id: 1,
+                        question: "Question 1",
+                        type: "radio",
+                        options: [
+                            {
+                                id: 1,
+                                option: "Option 1",
+                                optionValue: "option1",
+                                optionType: "radio",
+                                optionChecked: false,
+                                optionRequired: false,
+                                optionPlaceholder: "Option 1",
+                                optionLabel: "Option 1",
+                                optionSelected: false,
+                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                                optionImage: "https://picsum.photos/200/300",
+                            },
+                            {
+                                id: 2,
+                                option: "Option 2",
+                                optionValue: "option2",
+                                optionType: "radio",
+                                optionChecked: false,
+                                optionRequired: false,
+                                optionPlaceholder: "Option 2",
+                                optionLabel: "Option 2",
+                                optionSelected: false,
+                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                                optionImage: "https://picsum.photos/200/300",
+                            },
+                            {
+                                id: 3,
+                                option: "Option 3",
+                                optionValue: "option3",
+                                optionType: "radio",
+                                optionChecked: false,
+                                optionRequired: false,
+                                optionPlaceholder: "Option 3",
+                                optionLabel: "Option 3",
+                                optionSelected: false,
+                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                                optionImage: "https://picsum.photos/200/300",
+                            }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        question: "Question 2",
+                        type: "radio",
+                        options: [
+                            {
+                                id: 1,
+                                option: "Option 1",
+                                optionValue: "option1",
+                                optionType: "radio",
+                                optionChecked: false,
+                                optionRequired: false,
+                                optionPlaceholder: "Option 1",
+                                optionLabel: "Option 1",
+                                optionSelected: false,
+                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                                optionImage: "https://picsum.photos/200/300",
+                            },
+                            {
+                                id: 2,
+                                option: "Option 2",
+                                optionValue: "option2",
+                                optionType: "radio",
+                                optionChecked: false,
+                                optionRequired: false,
+                                optionPlaceholder: "Option 2",
+                                optionLabel: "Option 2",
+                                optionSelected: false,
+                            }
+                        ]
+                    }
+                ]
+            },
 
-//         ]);
-//     }, []);
+        ]);
+    }, []);
     
-//     return (
-//         <div className="flex flex-col items-center justify-center">
-//             {form.map((item) => (
-//             <div className="">
-//                 <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-//                     <h1>
-//                       ({item.id}) {item.title})  
-//                     </h1>
-//                 </div>
+    return (
+        <div className="bg-stone-200">
+        <div className="flex flex-col items-center justify-center">
+            {form.map((item) => (
+            <div className="">
+                <div className="bg-white rounded-2xl -mt-3  ">
+                    <div className="md:flex md:flex-col md:items-start md:justify-center">
+                        <button type="button" class="mt-4 ml-2 text-stone-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 " onClick={() => navigate ("/home")}>
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Icon description</span>
+                        </button>
+                    </div>
+                        
+                    <div className="max-md:mt-6 md:flex md:flex-col md:items-start  md:justify-center">
+                        <div className="md: mx-auto:text-justify px-8 text-4xl font-medium">
+                            <h1 className="block w-full p-2 focus:outline-none  text-black">
+                                {item.title}
+                            </h1>
+                        </div>
+                        <div className="md: mx-auto:text-justify px-8 mb-10">
+                            <p className="block w-full p-2 pr-10 focus:outline-none  text-black">
+                                {item.description}
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-//                 <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-//                     <p>
-//                         {item.description}
-//         </div>
-//     );
-// }
+                <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+                    <p>
+                        Token: {item.token}
+                    </p>
+                </div>
+
+                <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+                    <p>
+                        Questions:
+                    </p>
+
+                    {item.questions.map((question) => (
+                        <div>
+                            <p>
+                                ({question.id}) {question.question}
+                            </p>
+
+                            {question.options.map((option) => (
+                                <div>
+                                    <p>
+                                        ({option.id}) {option.option}
+                                    </p>
+                                    
+                                    <p>
+                                        {option.optionDescription}
+                                    </p>
+
+                                    <p>
+                                        {option.optionImage}
+                                    </p>
+
+                                    <p>
+                                        {option.optionSelected}
+                                    </p>
+
+                                    <p>
+                                        {option.optionType}
+                                    </p>
+
+                                    <p>
+                                        {option.optionValue}
+                                    </p>
+
+                                    <p>
+                                        {option.optionChecked}
+                                    </p>
+
+                                    <p>
+                                        {option.optionRequired}
+                                    </p>
+
+                                    <p>
+                                        {option.optionPlaceholder}
+                                    </p>
+
+                                    <p>
+                                        {option.optionLabel}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            ))}
+        </div>
+        </div>
+    );
+}

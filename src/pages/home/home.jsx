@@ -6,6 +6,10 @@ import './home.css';
 export default function Home() {
     const navigate = useNavigate();
 
+const [user , /*setUser*/] = React.useState({
+        name: "JOHN DOE",
+    });
+
     const [token, setToken] = React.useState("");
 
     const handleSubmit = (e) => {
@@ -30,40 +34,40 @@ export default function Home() {
                 id: 1,
                 title: "Form 1",
                 token: "1da2ad",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
             {
                 id: 2,
                 title: "Form 2",
                 token: "1da23d",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
             {
                 id: 3,
                 title: "Form 3",
                 token: "ahsdbas",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
             {
                 id: 4,
                 title: "Form 4",
                 token: "bhsdbas",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
             {
                 id: 5,
                 title: "Form 5",
                 token : "123456",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
 
         ]);
     }, []);
 
     return (
-        <div>
-            <div className="container text-center md:text-left mt-20 px-8 text-4xl font-bold text-primary tx">
-                <h1>WELCOME BACK <span className="font-inte text-transparent bg-clip-text bg-gradient-to-bl from-green-700 via-green-400 to-blue-500">JOHN DOE</span> </h1>
+        <div className="font-inte">
+            <div className="container text-center md:text-left mt-20 px-8 text-4xl font-bold text-primary tx">  
+                <h1>WELCOME BACK <span className="font-inte text-transparent bg-clip-text bg-gradient-to-bl from-green-700 via-green-400 to-blue-500">{user.name}</span></h1>
             </div>
             <div>              
                 <form className="mx-auto mt-8 px-4">   
@@ -97,7 +101,7 @@ export default function Home() {
                         <div className="bg-white rounded-lg shadow-lg p-4">
                             <div className="flex justify-between items-center">
                                 <span className="font-bold text-gray-800">{item.title}</span>
-                                <span className="px-2 py-1 bg-green-600 text-white font-bold rounded">{item.token}</span>
+                                <span className="md:px-2 md:py-1 bg-green-600 text-white font-bold rounded">{item.token}</span>
                             </div>
                             <p className="text-gray-600 mt-2">{item.description}</p>
                             <div className="flex justify-between items-center mt-4">
@@ -116,7 +120,7 @@ export default function Home() {
                     )}
 
                     {/* search by token */}
-                    {form.filter((item) => {
+                    {/* {form.filter((item) => {
                         if (token === "") {
                             return item
                         } else if (item.token.toLowerCase().includes(token.toLowerCase())) {
@@ -138,7 +142,7 @@ export default function Home() {
                                 </button>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
         </div>
     )
