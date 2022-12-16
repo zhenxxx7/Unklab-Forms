@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AnswerCard from "../../component/card/answerCard";
 
 export default function AnswerForm() {
     const navigate = useNavigate();
@@ -124,66 +125,10 @@ export default function AnswerForm() {
                     </div>
                 </div>
 
-                <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                    <p>
-                        Token: {item.token}
-                    </p>
-                </div>
-
-                <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
-                    <p>
-                        Questions:
-                    </p>
-
+                <div class="">
                     {item.questions.map((question) => (
                         <div>
-                            <p>
-                                ({question.id}) {question.question}
-                            </p>
-
-                            {question.options.map((option) => (
-                                <div>
-                                    <p>
-                                        ({option.id}) {option.option}
-                                    </p>
-                                    
-                                    <p>
-                                        {option.optionDescription}
-                                    </p>
-
-                                    <p>
-                                        {option.optionImage}
-                                    </p>
-
-                                    <p>
-                                        {option.optionSelected}
-                                    </p>
-
-                                    <p>
-                                        {option.optionType}
-                                    </p>
-
-                                    <p>
-                                        {option.optionValue}
-                                    </p>
-
-                                    <p>
-                                        {option.optionChecked}
-                                    </p>
-
-                                    <p>
-                                        {option.optionRequired}
-                                    </p>
-
-                                    <p>
-                                        {option.optionPlaceholder}
-                                    </p>
-
-                                    <p>
-                                        {option.optionLabel}
-                                    </p>
-                                </div>
-                            ))}
+                            <AnswerCard />
                         </div>
                     ))}
                 </div>

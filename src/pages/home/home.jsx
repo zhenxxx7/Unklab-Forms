@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './home.css';
 
 
@@ -27,7 +28,6 @@ const [user , /*setUser*/] = React.useState({
     const [form, setForm] = React.useState([]);
     
 
-    // set form data
     React.useEffect(() => {
         setForm([
             {
@@ -95,22 +95,32 @@ const [user , /*setUser*/] = React.useState({
 
             {/* create grid form list */}
             
-
-                <div className="mx-10 grid grid-cols-2 gap-4 mt-20 mb-10 p-5 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-200 dark:border-gray-300">
-                    {form.map((item) => (
-                        <div className="bg-white rounded-lg shadow-lg p-4">
+                
+                <div className="mx-10 grid grid-cols-2 gap-4 mt-10 mb-10 p-5 overflow-y-auto h-96 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-200 dark:border-gray-300">
+                    {/* scroll this div */}
+                    
+                        {/* map form list */}
+                        {form.map((item) => (
+                            <Link to="/answerForm" className="" onClick={() => navigate ("/answerForm", {state: item})}>
+                            <div className="bg-white rounded-lg shadow-lg p-4">
                             <div className="flex justify-between items-center">
                                 <span className="font-bold text-gray-800">{item.title}</span>
                                 <span className="md:px-2 md:py-1 bg-green-600 text-white font-bold rounded">{item.token}</span>
                             </div>
-                            <p className="text-gray-600 mt-2">{item.description}</p>
+                            {/* limit p to 5 word*/}
+                            <p className="mt-2 text-gray-600">{item.description.substring(0, 30)}...</p>
+                            {/* <p className="mt-2 text-gray-600"></p> */}
                             <div className="flex justify-between items-center mt-4">
                                 <button className="bg-stone-300 hover:bg-orange-600 text-black font-bold py-2 px-4 rounded-md" onClick={() => navigate ("/answerForm", {state: item})}>
                                     <span className="tx">View Form</span>
                                 </button>
                             </div>
-                        </div>
-                    ))}
+                            </div>
+                            </Link>
+                        ))}   
+                    
+                    
+                    
 
                     {/* if null set not form to display */}
                     {form.length === 0 && (
@@ -118,31 +128,6 @@ const [user , /*setUser*/] = React.useState({
                             <h3 className="text-center text-gray-500 px-28 py-48">No public Forms At The Moment</h3>
                         </div>
                     )}
-
-                    {/* search by token */}
-                    {/* {form.filter((item) => {
-                        if (token === "") {
-                            return item
-                        } else if (item.token.toLowerCase().includes(token.toLowerCase())) {
-                            return item
-                        }
-                    }).map((item) => (
-                        <div className="hidden bg-white rounded-lg shadow-lg p-4">
-                            <div className="flex justify-between items-center">
-                                <span className="font-bold text-gray-800">{item.title}</span>
-                                <span className="px-2 py-1 bg-green-600 text-white font-bold rounded">{item.token}</span>
-                            </div>
-                            <p className="text-gray-600 mt-2">{item.description}</p>
-                            <div className="flex justify-between items-center mt-4">
-                                <button className="bg-stone-300 hover:bg-orange-600 text-black font-bold py-2 px-4 rounded-md"
-                                // navigate to answer form by token
-                                onClick={() => navigate ("/answerForm", {state: token})}
-                                >
-                                    <span className="tx">View Form</span>
-                                </button>
-                            </div>
-                        </div>
-                    ))} */}
                 </div>
         </div>
     )
