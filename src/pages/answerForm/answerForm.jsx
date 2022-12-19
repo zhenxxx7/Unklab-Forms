@@ -100,7 +100,7 @@ export default function AnswerForm() {
     
     return (
         <div className="bg-stone-200">
-        <div className="flex flex-col items-center justify-center">
+        <div className="container flex flex-col items-center justify-center">
             {form.map((item) => (
             <div className="">
                 <div className="bg-white rounded-2xl -mt-3  ">
@@ -125,9 +125,9 @@ export default function AnswerForm() {
                     </div>
                 </div>
 
-                <div class="">
+                <div class="flex flex-col items-center justify-center">
                     {item.questions.map((question) => (
-                        <div>
+                        <div className="my-3">
                             <AnswerCard />
                         </div>
                     ))}

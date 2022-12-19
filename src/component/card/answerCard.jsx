@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AnswerCard({ id, img}) {
+export default function AnswerCard({props}) {
 
 const [option, /*setOption*/] = React.useState([
         {
@@ -20,19 +20,10 @@ const [option, /*setOption*/] = React.useState([
             value: "C",
             text: "Jawaban C",
             isCorrect: false,
+            img: "https://picsum.photos/200/300",
         },
 
     ]);
-
-    React.useEffect(() => {
-        if (img) {
-            const previewImage = document.getElementById("previewImage");
-            const imgElement = document.createElement("img");
-            imgElement.src = img;
-            imgElement.className = "w-64 h-64 object-cover rounded-lg";
-            previewImage.appendChild(imgElement);
-        }
-    }, [img]);
 
     
 
@@ -45,6 +36,8 @@ const [option, /*setOption*/] = React.useState([
                 <hr className="mt-3 h-0 rounded bg-black " />
 
                 <div id="previewImage" className="relative mt-4 flex flex-col items-center ">
+                    <img src="https://picsum.photos/200/300" alt="preview" className="w-64 h-64 rounded-lg" />
+
                     
                 </div>
                 
