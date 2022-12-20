@@ -35,7 +35,7 @@ export default function CreateForm() {
     }
     
     return (
-        <div className="bg-stone-200">
+        <div className="w-screen h-screen bg-stone-200">
             <div className="flex flex-col items-center justify-center">
                 <div className="bg-white rounded-2xl -mt-3  ">
                     <div className="md:flex md:flex-col md:items-start md:justify-center">
@@ -54,7 +54,7 @@ export default function CreateForm() {
                         </div>
                     </div>
                 </div>
-                <div className="relative flex flex-col items-center justify-center ">
+                <div className=" relative flex flex-col items-center justify-center ">
                     {/* <div className="m-3 md:mb-1">
                         <InputCard />
                     </div> */}
@@ -64,7 +64,7 @@ export default function CreateForm() {
                             return (
                                 <div key={index}>
                                     <div className="m-3 md:mb-1">
-                                        {cards.length > 2 && 
+                                        {cards.length > 1 && 
                                             <button id="remove" className="relative float-right right-4 top-3"
                                             onClick={() => handleRemoveClick(index)}
                                                 >
@@ -82,7 +82,7 @@ export default function CreateForm() {
                 
 
             <div class="mt-3 flex flex-col items-center justify-center">
-                <div class=" max-w-sm py-10 px-44 bg-white border border-gray-200 rounded-2xl shadow-md">
+                <div class=" max-w-lg w-screen py-10 md:px-[12.5rem] px-44 flex flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl shadow-md">
                     <button id="add"
                     onClick={addCard}
                     >

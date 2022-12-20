@@ -29,7 +29,7 @@ const [option, /*setOption*/] = React.useState([
 
     return (
         <div className="">
-            <div class=" max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+            <div class=" max-w-lg w-screen p-6 bg-white border border-gray-200 rounded-lg shadow-md">
                 <p className="block w-full font-medium text-lg text-black focus:outline-none">
                     untuk pertanyaan 1
                 </p>

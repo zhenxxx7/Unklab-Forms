@@ -99,11 +99,11 @@ export default function AnswerForm() {
     }, []);
     
     return (
-        <div className="bg-stone-200">
-        <div className="container flex flex-col items-center justify-center">
+        <div className=" bg-stone-200">
+        <div className="flex flex-col items-center justify-center">
             {form.map((item) => (
             <div className="">
-                <div className="bg-white rounded-2xl -mt-3  ">
+                <div className="max-w-lg bg-white rounded-2xl -mt-3  ">
                     <div className="md:flex md:flex-col md:items-start md:justify-center">
                         <button type="button" class="mt-4 ml-2 text-stone-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 " onClick={() => navigate ("/home")}>
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
