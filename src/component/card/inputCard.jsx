@@ -73,38 +73,20 @@ export default function InputCard(){
                 value={Option.Option} onChange={e => handleOptionChange({Option: e.target.value})}
                 ></input>
                 <hr className="mt-3 h-0 rounded bg-black " />
-
-                
-
                 <span className="text-red-600 hidden">This field needs to be filled</span>
-                {/* <input type="file" class="mt-4 block w-full text-sm text-slate-500
-                    file:mr-4 file:py-2 file:px-4
-                    file:rounded-lg file:border-0
-                    file:text-sm file:font-semibold
-                    file:bg-stone-200 file:text-black
-                    hover:file:bg-violet-100
-                "/> */}
-
-                {!preview && (
-                    
-                <div class="mt-4">
-                    {/* <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Add image</label> */}
-                    <div class="mt-2 flex items-center">
-                        <button id="addImage1"
-                        className=" bg-stone-200 hover:bg-stone-400 font-inte text-sm text-black font-medium py-2 px-4 rounded"
-                        onClick={() => img.current.click()}
-                        >
-                            Add image
-                        </button>
-                        <input ref={img} type="file"  /* class="mt-4 block w-full text-sm text-slate-500
-                    file:mr-4 file:py-2 file:px-4
-                    file:rounded-lg file:border-0
-                    file:text-sm file:font-semibold
-                    file:bg-stone-200 file:text-black
-                    hover:file:bg-violet-100"*/ hidden onChange={handleFileChange} />
+                {!preview && (    
+                    <div class="mt-4">
+                        <div class="mt-2 flex items-center">
+                            <button id="addImage1"
+                            className=" bg-stone-200 hover:bg-stone-400 font-inte text-sm text-black font-medium py-2 px-4 rounded"
+                            onClick={() => img.current.click()}
+                            >
+                                Add image
+                            </button>
+                            <input ref={img} type="file" hidden onChange={handleFileChange} />
+                        </div>
                     </div>
-                </div>
-                        )}
+                )}
 
                 <div id="previewImage" className="relative mt-4 flex flex-col items-center ">
                     {image.map((img, index) => (
@@ -118,24 +100,7 @@ export default function InputCard(){
                             </button>
                         </div>
                     )}
-
                 </div>
-
-                {/* if no image then remove button not showing */}
-                
-                
-                {/* <div class="flex items-center mt-6 mb-4">
-                    <input id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                    <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
-                </div>
-                <div class="flex items-center mt-6 mb-4">
-                    <input checked id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                    <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
-                </div>
-                <div class="flex items-center mt-6 mb-4">
-                    <input checked id="radio" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  dark:ring-offset-gray-800  dark:bg-gray-700 dark:border-gray-600"></input>
-                    <label for="radio" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Option 1</label>
-                </div> */}
                 <div class="">
                     {Option.map((opti, index) => {
                         return(
