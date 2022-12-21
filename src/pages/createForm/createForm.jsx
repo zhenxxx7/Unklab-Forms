@@ -9,16 +9,17 @@ export default function CreateForm() {
     const [showModal, setShowModal] = useState(false);
     const handleOnClose = () => setShowModal(false);
     const [cards, setCards] = useState([{cards: ""}]);
+    console.log(cards);
     const addCard = () => {
         setCards([...cards, {cards: ""}]);
     };
 
-    // const handleOnChange = (e, index) => {
-    //     const {name, value} = e.target;
-    //     const list = [...cards];
-    //     list[index][name] = value;
-    //     setCards(list);
-    // };
+    const handleOnChange = (e, index) => {
+        const {name, value} = e.target;
+        const list = [...cards];
+        list[index][name] = value;
+        setCards(list);
+    };
 
 
     const handleRemoveClick = (index) => {
@@ -35,7 +36,7 @@ export default function CreateForm() {
     }
     
     return (
-        <div className="w-screen h-screen bg-stone-200">
+        <div className=" bg-stone-200">
             <div className="flex flex-col items-center justify-center">
                 <div className="bg-white rounded-2xl -mt-3  ">
                     <div className="md:flex md:flex-col md:items-start md:justify-center">
@@ -59,11 +60,13 @@ export default function CreateForm() {
                         <InputCard />
                     </div> */}
 
-                    <div className="" id="addremove-card">
-                        {cards.map((card, index) => {
-                            return (
+                    <div className="" id="cards">
+                        {cards.map((card, index) =>
                                 <div key={index}>
-                                    <div className="m-3 md:mb-1">
+                                    <div id="cards" className="m-3 md:mb-1"
+                                    value={card.cards}
+                                    onChange={e => handleOnChange(e, index)}                                    
+                                    >
                                         {cards.length > 1 && 
                                             <button id="remove" className="relative float-right right-4 top-3"
                                             onClick={() => handleRemoveClick(index)}
@@ -74,8 +77,6 @@ export default function CreateForm() {
                                         <InputCard />
                                     </div>
                                 </div>
-                            );
-                        }
                         )}
                     </div>
                 </div>
