@@ -75,7 +75,7 @@ export default function AnswerForm() {
     }, []);
     
     return (
-        <div className=" bg-stone-200">
+        <div className=" bg-[#94BBFF]">
         <div className="flex flex-col items-center justify-center">
             {form.map((item) => (
             <div className="">
@@ -115,7 +115,7 @@ export default function AnswerForm() {
             ))}
             <button
                 type="button"
-                className="mt-4 text-stone-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 "
+                className="mt-4 bg-slate-500 text-stone-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm p-2.5 text-center inline-flex mr-96  dark:text-stone-800 "
                 onClick={() => navigate("/home")}
             >close</button>
         </div>
