@@ -36,7 +36,7 @@ export default function CreateForm() {
     }
     
     return (
-        <div className=" bg-stone-200">
+        <div className=" bg-[#94BBFF]">
             <div className="flex flex-col items-center justify-center">
                 <div className="bg-white rounded-2xl -mt-3  ">
                     <div className="md:flex md:flex-col md:items-start md:justify-center">
@@ -62,19 +62,19 @@ export default function CreateForm() {
 
                     <div className="" id="cards">
                         {cards.map((card, index) =>
-                                <div key={index}>
+                                <div >
                                     <div id="cards" className="m-3 md:mb-1"
-                                    value={card.cards}
+                                    
                                     onChange={e => handleOnChange(e, index)}                                    
                                     >
-                                        {cards.length > 1 && 
+                                        {cards.length >  1 && 
                                             <button id="remove" className="relative float-right right-4 top-3"
                                             onClick={() => handleRemoveClick(index)}
                                                 >
                                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                                             </button>
                                         }
-                                        <InputCard />
+                                        <InputCard value={card.cards} key={index} />
                                     </div>
                                 </div>
                         )}

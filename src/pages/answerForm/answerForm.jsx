@@ -13,82 +13,58 @@ export default function AnswerForm() {
                 id: 1,
                 title: "Form 1",
                 token: "1da2ad",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
                 questions: [
                     {
                         id: 1,
-                        question: "Question 1",
+                        questiontxt: "Question 1",
                         type: "radio",
                         options: [
                             {
                                 id: 1,
                                 option: "Option 1",
-                                optionValue: "option1",
+                                value: "option1",
                                 optionType: "radio",
-                                optionChecked: false,
-                                optionRequired: false,
-                                optionPlaceholder: "Option 1",
-                                optionLabel: "Option 1",
-                                optionSelected: false,
-                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-                                optionImage: "https://picsum.photos/200/300",
+                                text: "petanyaan a",
+                                img: "https://picsum.photos/200/300",
                             },
                             {
                                 id: 2,
                                 option: "Option 2",
-                                optionValue: "option2",
+                                value: "option2",
                                 optionType: "radio",
-                                optionChecked: false,
-                                optionRequired: false,
-                                optionPlaceholder: "Option 2",
-                                optionLabel: "Option 2",
-                                optionSelected: false,
-                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-                                optionImage: "https://picsum.photos/200/300",
+                                text: "petanyaan a",
+                                img: "https://picsum.photos/200/300",
                             },
                             {
                                 id: 3,
                                 option: "Option 3",
-                                optionValue: "option3",
+                                value: "option3",
                                 optionType: "radio",
-                                optionChecked: false,
-                                optionRequired: false,
-                                optionPlaceholder: "Option 3",
-                                optionLabel: "Option 3",
-                                optionSelected: false,
-                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-                                optionImage: "https://picsum.photos/200/300",
+                                text: "petanyaan a",
+                                img: "https://picsum.photos/200/300",
                             }
                         ]
                     },
                     {
                         id: 2,
-                        question: "Question 2",
+                        questiontxt: "Question 2",
                         type: "radio",
                         options: [
                             {
                                 id: 1,
                                 option: "Option 1",
-                                optionValue: "option1",
+                                value: "option1",
                                 optionType: "radio",
-                                optionChecked: false,
-                                optionRequired: false,
-                                optionPlaceholder: "Option 1",
-                                optionLabel: "Option 1",
-                                optionSelected: false,
-                                optionDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris. Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam massa, sit amet aliquam nisl nunc vel mauris.",
-                                optionImage: "https://picsum.photos/200/300",
+                                text: "petanyaan a",
+                                img: "https://picsum.photos/200/300",
                             },
                             {
                                 id: 2,
                                 option: "Option 2",
-                                optionValue: "option2",
+                                value: "option2",
                                 optionType: "radio",
-                                optionChecked: false,
-                                optionRequired: false,
-                                optionPlaceholder: "Option 2",
-                                optionLabel: "Option 2",
-                                optionSelected: false,
+                                text: "petanyaan a",
                             }
                         ]
                     }
@@ -128,12 +104,20 @@ export default function AnswerForm() {
                 <div class="flex flex-col items-center justify-center">
                     {item.questions.map((question) => (
                         <div className="my-3">
-                            <AnswerCard />
+                            <AnswerCard 
+                                questions={question.questions}
+                                options={question.options}
+                            />
                         </div>
                     ))}
                 </div>
             </div>
             ))}
+            <button
+                type="button"
+                className="mt-4 text-stone-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2  dark:text-stone-800 "
+                onClick={() => navigate("/home")}
+            >close</button>
         </div>
         </div>
     );

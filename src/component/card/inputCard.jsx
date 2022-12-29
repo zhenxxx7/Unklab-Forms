@@ -67,7 +67,7 @@ export default function InputCard(){
     return(
         <div className="">
             <div class="w-screen max-w-lg p-6  bg-white border border-gray-200 rounded-lg shadow-md">
-                <input type="text" id="small-input" class="block w-full font-medium text-lg text-black focus:outline-none placeholder:text-black" placeholder="Untitled Question"
+                <input type="text" id="small-input" class="block w-full font-medium text-lg text-black focus:outline-none placeholder:text-stone-400" placeholder="Untitled Question"
                 ></input>
                 <hr className="mt-3 h-0 rounded bg-black " />
                 <span className="text-red-600 hidden">This field needs to be filled</span>
@@ -75,7 +75,7 @@ export default function InputCard(){
                     <div class="mt-4">
                         <div class="mt-2 flex items-center">
                             <button id="addImage1"
-                            className=" bg-stone-200 hover:bg-stone-400 font-inte text-sm text-black font-medium py-2 px-4 rounded"
+                            className=" bg-[#64ACFF] hover:bg-stone-400 font-inte text-sm text-white font-medium py-2 px-4 rounded"
                             onClick={() => img.current.click()}
                             >
                                 Add image
@@ -117,7 +117,6 @@ export default function InputCard(){
                                         </button>
                                     </div>
                                     )}
-                                    {/* munculkan image berbeda tiap index option*/}
                                     {image2.map((img2, index) => (
                                         <img key={index} src = {img2} alt="preview" />
                                     ))}

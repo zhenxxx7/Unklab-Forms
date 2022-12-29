@@ -5,7 +5,7 @@ import './home.css';
 
 
 export default function Home() {
-    const navigate = useNavigate();
+const navigate = useNavigate();
 
 const [user , /*setUser*/] = React.useState({
         name: "JOHN DOE",
@@ -19,7 +19,6 @@ const [user , /*setUser*/] = React.useState({
         if (token === "") {
             alert("Token cannot be empty");
         } else {
-            // show form by token
         }
         console.log(token);
     }
@@ -32,63 +31,33 @@ const [user , /*setUser*/] = React.useState({
         setForm([
             {
                 id: 1,
+                expired: "2021-10-10",
                 title: "Form 1",
-                token: "1da2ad",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
             },
             {
                 id: 2,
+                expired: "2021-10-10",
                 title: "Form 2",
-                token: "1da23d",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
             },
             {
                 id: 3,
+                expired: "2021-10-10",
                 title: "Form 3",
-                token: "ahsdbas",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
             },
             {
                 id: 4,
+                expired: "2021-10-10",
                 title: "Form 4",
-                token: "bhsdbas",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
             },
             {
                 id: 5,
+                expired: "2021-10-10",
                 title: "Form 5",
-                token : "123456",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            },
-            {
-                id: 6,
-                title: "Form 6",
-                token: "vwsefs",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            },
-            {
-                id: 7,
-                title: "Form 7",
-                token: "1df2ad",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            },
-            {
-                id: 8,
-                title: "Form 8",
-                token: "1dasdd",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            },
-            {
-                id: 9,
-                title: "Form 9",
-                token: "1svdac",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            },
-            {
-                id: 10,
-                title: "Form 10",
-                token: "nfasef",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                description: "lorem ipsum dolor sit amet and so on and so forth etc etc etc",
             },
 
         ]);
@@ -96,8 +65,8 @@ const [user , /*setUser*/] = React.useState({
 
     return (
         <div className="font-inte">
-            <div className="container text-center md:text-left mt-20 px-8 text-4xl font-bold text-primary tx">  
-                <h1>WELCOME BACK <span className="font-inte text-transparent bg-clip-text bg-gradient-to-bl from-green-700 via-green-400 to-blue-500">{user.name}</span></h1>
+        <div className="container text-center md:text-left mt-20 px-8 text-4xl font-bold text-[#2F76FF] tx">  
+                <h1>WELCOME BACK <span className="font-inte text-transparent bg-clip-text bg-gradient-to-bl from-green-700 via-green-400 to-blue-500">{user.name}!</span></h1>
             </div>
             <div>              
                 <form className="mx-auto mt-8 px-4">   
@@ -122,15 +91,17 @@ const [user , /*setUser*/] = React.useState({
                     <span className="tx">Create Form</span>
                 </button>
             </div>  
-                <div className="mx-10 grid grid-cols-2 gap-4 mt-10 mb-10 p-5 overflow-y-auto h-96 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-200 dark:border-gray-300">
+                <div className="mx-2 grid grid-cols-2 gap-4 mt-10 mb-10 p-3 overflow-y-auto h-[33rem] bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-200 dark:border-gray-300">
                         {/* map form list */}
                         {form.map((item) => (
                             <Link to="/answerForm" className="" onClick={() => navigate ("/answerForm", {state: item})}>
                             <div className="bg-white rounded-lg shadow-lg p-4">
-                            <div className="flex justify-between items-center">
-                                <span className="font-bold text-gray-800">{item.title}</span>
-                                <span className="md:px-2 md:py-1 bg-green-600 text-white font-bold rounded">{item.token}</span>
+                            <div className="flex justify-end items-end mb-4">
+                                <span className="flex justify-end items-end"></span>
+                                <span className="md:px-2 md:py-1 text-blue-800 font-bold rounded ">
+                                {item.expired}</span>
                             </div>
+                            <p className="font-bold text-gray-800">{item.title}</p>
                             <p className="mt-2 text-gray-600">{item.description.substring(0, 30)}...</p>
                             </div>
                             </Link>
